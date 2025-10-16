@@ -22,10 +22,10 @@ namespace FirestoneAutoSquelch
             Logger = base.Logger;
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
 
-            downloadLink = Config.Bind("General", "Name", MyPluginInfo.PLUGIN_NAME);
-            downloadLink = Config.Bind("General", "Guid", MyPluginInfo.PLUGIN_GUID);
-            downloadLink = Config.Bind("General", "Version", MyPluginInfo.PLUGIN_VERSION);
-            downloadLink = Config.Bind("General", "DownloadLink", "https://github.com/Zero-to-Heroes/firestone-bepinex-auto-squelch");
+            Config.Bind("General", "Name", MyPluginInfo.PLUGIN_NAME);
+            Config.Bind("General", "Guid", MyPluginInfo.PLUGIN_GUID);
+            Config.Bind("General", "Version", MyPluginInfo.PLUGIN_VERSION);
+            Config.Bind("General", "DownloadLink", "https://github.com/Zero-to-Heroes/firestone-bepinex-auto-squelch");
 
             var harmony = new Harmony("com.firestoneapp.FirestoneAutoSquelch");
             harmony.PatchAll();
